@@ -1,0 +1,175 @@
+.register-container {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 120rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 1rem;
+  max-width: 400px;
+}
+
+.register-container form:hover {
+border:  1px solid transparent;
+  box-shadow: 2px 2px 15px rgb(115, 115, 115);
+}
+
+.greeting-message {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-family: arial;
+  font-style: italic;
+  font-size: 3.5rem;
+  display: grid;
+}
+
+.greeting-message span {
+  color: rgb(0, 0, 0);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 2.5rem;
+  margin-top: 0.7rem;
+}
+
+.register-container p {
+  color: rgb(56, 48, 43);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.register-container h5 {
+  color: black;
+  font-size: 1.4rem;
+  margin: 0;
+  font-style: oblique;
+  font-weight: 700;
+}
+
+.register-container input {
+  padding: 4.8px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid orange;
+}
+.register-container input::placeholder {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 800;
+  color: rgb(74, 56, 56);
+}
+
+.register-container button {
+  background-color: orange;
+  padding: 4.6px;
+  border-radius: 10px;
+  font-family: arial;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  color:white;
+  border: none;
+}
+
+.sign-up span:hover {
+  color: orange;
+}
+.notice {
+  font-size: medium;
+}
+.statusLoading {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: linear-gradient(
+    120deg,
+    #ff7a18,
+    #ff3d00,
+    #ff9a00,
+    #af002d
+  );
+  background-size: 300% 300%;
+  animation: bgMove 5s ease infinite;
+}
+
+/* glowing floating circles */
+.statusLoading::before,
+.statusLoading::after {
+  content: "";
+  position: absolute;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: float 6s ease-in-out infinite;
+}
+
+.statusLoading::before {
+  background: #ffffff;
+  top: -10rem;
+  left: -10rem;
+}
+
+.statusLoading::after {
+  background: #000;
+  bottom: -10rem;
+  right: -10rem;
+  animation-delay: 2s;
+}
+
+.statusLoading img {
+  width: 7rem;
+  height: 7rem;
+  object-fit: contain;
+  z-index: 2;
+
+  animation: pulse 1.3s ease-in-out infinite;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+}
+
+.statusLoading p {
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 600;
+  color: #fff;
+  z-index: 2;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(0.95); }
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(3rem, -3rem); }
+  100% { transform: translate(0, 0); }
+}

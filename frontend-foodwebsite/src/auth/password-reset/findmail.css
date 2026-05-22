@@ -1,0 +1,67 @@
+.mail-container {
+  width: 90%;
+  min-height: 100vh;
+  max-width: 120rem;
+  margin: 0.5rem auto;
+}
+
+.mail-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 1.35rem;
+  min-height: 20rem;
+  border-color: gray;
+  padding: 2rem;
+}
+
+.mail-container form:hover {
+  border-style: 1px solid transparent;
+  box-shadow: 2px 2px 15px rgb(115, 115, 115);
+}
+
+.mail-container h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  font-style: unset;
+  margin: 0;
+  color: rgb(35, 34, 34);
+  font-weight: 500;
+}
+
+.mail-container p {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  width: 100%;
+  color: gray;
+}
+
+.mail-container input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+.mail-container input:focus {
+  outline: none;
+  border: 1px solid orange;
+}
+.mail-container input::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+}
+
+.mail-container button {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.8rem;
+  cursor: pointer;
+  background-color: orange;
+  border: none;
+  border-radius: 6px;
+  color: white;
+}

@@ -1,0 +1,19 @@
+/*
+
+login share the same css with register in terms of  class naming 
+*/
+
+.register-container h3 {
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.register-container h3:hover {
+  color: rgb(183, 129, 30);
+}
+
+.sign-up span:hover{
+color: rgb(183, 129, 30);
+}

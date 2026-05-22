@@ -1,0 +1,169 @@
+.hero-section-container {
+  background-color: rgb(255, 106, 7);
+  height: 20rem;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 120rem;
+  gap: 4rem;
+  align-items: center;
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+  z-index: 100;
+}
+
+.hero-sub-container {
+  width: 100%;
+  display: flex;
+  gap: 8rem;
+  align-items: center;
+  margin-right: 2rem;
+  max-width: 100%;
+  padding-top:1.4rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-sub-container img {
+  border-radius: 50%;
+  margin-left: 2rem;
+  width: 6rem;
+}
+
+.hero-sub-container h2 {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.navIcon {
+  font-size: 2rem;
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:0;
+  cursor:pointer;
+}
+.navIcon div {
+  font-size: 1.5rem;
+  background-color: gray;
+  padding: 4px 8px;
+  align-items: center;
+  position: absolute;
+  bottom: -30px;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navIcon p{
+  color:rgb(255, 255, 255);
+  font-size: 1.7rem;
+  font-family: Arial, Helvetica, sans-serif;
+  position:absolute;
+  top: -2.5rem;
+  right:-0rem;
+  font-weight: 700;
+  text-align: center;
+  margin:0;
+
+}
+.navIcon:hover div {
+  opacity: 1;
+}
+
+.homeWriteUp {
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  max-width: 60rem;
+  margin-top: 1rem;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  margin-bottom: 1.5rem;
+
+  min-height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-link {
+  position: relative;
+}
+
+.order-link h2 {
+  font-size:2rem;
+}
+.order-link div {
+  font-size: 1.5rem;
+  background-color: gray;
+  padding: 4px 8px;
+  color: white;
+  position: absolute;
+  bottom: -30px;
+  text-align: center;
+  opacity: 0;
+  font-size: 1.4rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.order-link:hover div {
+  opacity: 1;
+}
+
+.navIcon div,
+.order-link div {
+  transition: opacity 0.2s ease;
+} 
+
+@media (max-width: 37.31rem) {
+  html {
+    font-size: 53%;
+  }
+}
+
+@media (max-width: 33.43rem) {
+  html {
+    font-size: 46%;
+  }
+}
+
+@media (max-width: 27.6rem) {
+  html {
+    font-size: 44%;
+  }
+}
+
+@media (max-width: 25.125rem) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media (max-width: 24rem) {
+  html {
+    font-size: 37%;
+  }
+}
+
+@media (max-width: 21.75rem) {
+  html {
+    font-size: 30%;
+  }
+}

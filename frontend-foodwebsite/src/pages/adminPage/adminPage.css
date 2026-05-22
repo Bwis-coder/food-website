@@ -1,0 +1,223 @@
+.admin-main-container {
+  background: #f5f7fb;
+  width: 92%;
+  max-width: 120rem;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 2rem 0 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin {
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-align: center;
+  color: #1e1e1e;
+  letter-spacing: 1px;
+  animation: floatTitle 3s ease-in-out infinite;
+}
+
+@keyframes floatTitle {
+  0% {
+    transform: translateY(0);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.85;
+  }
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.header h1 {
+  background: linear-gradient(135deg, #ff7a18, #ffb347);
+  color: white;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.25s ease;
+}
+
+.header h1:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.admin-middle-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.middle-section-header {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.admin-user-info {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-user-info th {
+  background: #ff7a18;
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.userDetails td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.userDetails:hover {
+  background: #f9fafc;
+}
+
+.userDetails button,
+.cutomers-details button,
+.logout-button {
+  background: #ff7a18;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.userDetails button:hover,
+.cutomers-details button:hover,
+.logout-button:hover {
+  background: #e66900;
+  transform: scale(1.03);
+}
+
+.cutomers-details {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fadeUp 0.3s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cutomers-details h1 {
+  font-size: 1.3rem;
+  color: #222;
+}
+
+.cutomers-details h4 {
+  color: #444;
+  margin-bottom: 0.3rem;
+}
+
+.cutomers-details span {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.cutomers-details h3 {
+  align-self: flex-end;
+  cursor: pointer;
+  color: #ff3b3b;
+  font-size: 1.2rem;
+  transition: 0.2s ease;
+}
+
+.cutomers-details h3:hover {
+  transform: scale(1.2);
+}
+
+.logout-button {
+  width: 100%;
+  font-size: 1.1rem;
+}
+
+.pageStatus {
+  font-size: 1.6rem;
+  width: 90%;
+  background-color: #ff7a18;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  text-align:center;
+  padding:1rem;
+  margin: 1rem auto;
+}
+
+.admin-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem 0;
+}
+
+.admin-home-link {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 1rem;
+
+  color: #d4af37;
+  background: rgba(212, 175, 55, 0.08);
+
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.admin-home-link:hover {
+  background: rgba(212, 175, 55, 0.15);
+  transform: translateY(-0.1rem);
+}
+
+.admin-home-link svg {
+  font-size: 1.6rem;
+  color: #d4af37;
+}
+
+
+@media (max-width: 46.31rem) {
+  html {
+    font-size: 55%
+  }
+}

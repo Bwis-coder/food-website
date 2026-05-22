@@ -1,0 +1,224 @@
+.orders-container {
+  width: 90%;
+  max-width: 120rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-height: 100vh;
+}
+
+/* ---------- ORDER SUMMARY ---------- */
+.order-hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background: #fff;
+}
+
+.order-hero-section h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  color: rgb(255, 145, 0);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.orderDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.orderDetails p {
+  font-size: 1.56rem;
+  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight:500;
+}
+
+/* ---------- ORDER ITEMS ---------- */
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background: #fff;
+}
+
+.order-items h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  color: rgb(255, 145, 0);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+/* ---------- FOOD ITEM ROW ---------- */
+.foodItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+
+.foodItems:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.foodItems img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgb(201, 126, 14);
+}
+
+.foodItems span {
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  font-weight:500;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+/* ---------- TOTAL SECTION ---------- */
+.order-total {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background: #fff;
+}
+
+.order-total h1 {
+  text-align: center;
+  color: rgb(255, 136, 0);
+  font-size: 1.8rem;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.order-total h5 {
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: #333;
+  font-weight:600
+}
+
+.button-action button {
+  padding: 0.8rem 1.5rem;
+  background: #ff8800;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.Navigation-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+}
+
+.subhead-container{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  gap:2rem;
+  width:90%;
+  margin: 1rem auto;
+}
+.subhead-container .greet {
+  text-align:center;
+  background-color:#ff8800;
+  padding:1rem;
+  color: white;
+  font-weight:600;
+  font-size:2rem;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.houseIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Icon a {
+  font-size: 3rem;
+  color: #ff8800;
+  cursor:pointer;
+}
+
+.Icon p{
+  font-size:1.5rem;
+  font-weight:500;
+  color:#140f09;
+
+}
+
+
+@media (max-width: 25.94rem) {
+  html {
+    font-size: 55%
+  }
+}
+
+
+@media (max-width: 23.20rem)  {
+  html {
+    font-size: 50%
+  }
+}

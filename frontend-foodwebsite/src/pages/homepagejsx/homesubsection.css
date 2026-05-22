@@ -1,0 +1,104 @@
+.subsection-container {
+  background-color: rgb(255, 106, 7);
+  width: 100%;
+  margin: 0 auto;
+  max-width: 90%;
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  color: white;
+  padding: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 2rem;
+}
+
+.contactAddress {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactAddress .contact-info {
+  display: flex;
+  margin-left: 0.5rem;
+  gap: 0.9rem;
+}
+.contact-info span {
+  font-size: 2rem;
+}
+.contactAddress {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.contactAddress span {
+  font-size: 1.2rem;
+}
+.contact-info p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.our-link {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.our-link p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 100%;
+  font-display: auto;
+}
+
+a h1 {
+  color: white;
+  font-size: 2rem;
+}
+
+.our-services {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-right: 1rem;
+}
+
+.our-services h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.our-services p {
+  font-size: 1.4rem;
+  font-style: italic;
+}
+
+@media (max-width: 37.31rem) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 27.6rem) {
+  html {
+    font-size: 44%;
+  }
+}
+@media (max-width: 25.125rem) {
+  html {
+    font-size: 40%;
+  }
+}
+@media (max-width: 24rem) {
+  html {
+    font-size: 37%;
+  }
+}
+
+@media (max-width: 21.75rem) {
+  html {
+    font-size: 30%;
+  }
+}

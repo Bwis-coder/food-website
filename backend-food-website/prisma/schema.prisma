@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role?    @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  resetToken String?
+  resetTokenExpiry DateTime?
+
+  orders Order[]
+  food   Food[]  @relation("CreatedFoods")
+}
+   
+   
+model Food {
+  id        String   @id @default(uuid())
+  name      String
+  image     String
+  price     Int
+  quantity  Int
+  createdAt DateTime @default(now())
+
+  createdById String
+  createdBy   User   @relation("CreatedFoods", fields: [createdById], references: [id], onDelete: Cascade)
+
+  orderItems OrderItem[]
+}
+
+model Order {
+  id         String      @id @default(uuid())
+  totalPrice Int
+  status     OrderStatus @default(PENDING)
+  createdAt  DateTime    @default(now())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  orderItem OrderItem[]
+
+  @@index([userId])
+  @@index([status])
+}
+
+model OrderItem {
+  id       String @id @default(uuid())
+  quantity Int
+  price    Int
+
+  orderId String
+  foodId  String
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  food  Food  @relation(fields: [foodId], references: [id], onDelete: Cascade)
+
+  @@unique([orderId, foodId])
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum OrderStatus {
+  PENDING
+  SUCCESSFUL
+  CONFIRMED
+}
