@@ -53,15 +53,15 @@ const Checkout = ({ getOrderItems }) => {
     },
   });
 
- const placeOrder = async () => {
-  if (order) {
-    setStatus(true);
+  const placeOrder = async () => {
+    if (order) {
+      setStatus(true);
 
-    setTimeout(() => {
-      navigate(`/orders/${order.id}`);
-    }, 4000);
-  }
-};
+      setTimeout(() => {
+        navigate(`/orders/${order.id}`);
+      }, 4000);
+    }
+  };
   if (status) {
     return (
       <div className="statusLoading">
@@ -73,6 +73,7 @@ const Checkout = ({ getOrderItems }) => {
   if (!order) {
     return (
       <>
+        <link rel="icon" type="image/svg+xml" href="/cart-favicon.png" />
         <NavLink className="review-icon" to="/home">
           <FontAwesomeIcon icon={faHouse} />
         </NavLink>
@@ -86,6 +87,7 @@ const Checkout = ({ getOrderItems }) => {
 
   return (
     <div className="checkoutMain-container">
+      <link rel="icon" type="image/svg+xml" href="/cart-favicon.png" />
       <div className="nav-container">
         <NavLink className="nav-icon" to="/home">
           <FontAwesomeIcon icon={faHouse} />

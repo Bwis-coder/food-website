@@ -35,11 +35,12 @@ const Home = ({ getOrderItems }) => {
   });
 
   if (isLoading) {
-    return <img className='svg-image' src="/bean-eater.svg" alt="loading" />;
+    return <img className="svg-image" src="/bean-eater.svg" alt="loading" />;
   }
 
   return (
     <div>
+       <link rel="icon" type="image/svg+xml" href="/home.png" />
       <Header
         getOrderItems={getOrderItems}
         openSearch={() => setSearch(true)}

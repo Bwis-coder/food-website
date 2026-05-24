@@ -31,10 +31,12 @@ const Orders = () => {
       queryClient.invalidateQueries({ queryKey: ["admin"] });
     }
   }, [order, queryClient]);
-  
+
   if (isLoading) {
     return (
       <div className="loading-container">
+        <link rel="icon" type="image/svg+xml" href="orders-favicon.png" />
+
         <h2>Loading order...</h2>
       </div>
     );
@@ -42,6 +44,8 @@ const Orders = () => {
   if (isError || !order) {
     return (
       <div className="subhead-container">
+        <link rel="icon" type="image/svg+xml" href="orders-favicon.png" />
+
         <div className="Navigation-container">
           <div className="Icon">
             <NavLink to="/home">

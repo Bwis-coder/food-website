@@ -26,13 +26,15 @@ const OrderMainPage = () => {
     refetchOnReconnect: true,
   });
 
-if (isLoading) {
-  return (
-    <div className="loading-container">
-      <h2>Loading order...</h2>
-    </div>
-  );
-}
+  if (isLoading) {
+    return (
+      <div className="loading-container">
+        <link rel="icon" type="image/svg+xml" href="orders-favicon.png" />
+
+        <h2>Loading order...</h2>
+      </div>
+    );
+  }
 
   if (isError) {
     return <h1>Failed to load orders</h1>;
@@ -41,6 +43,8 @@ if (isLoading) {
   if (!orders || orders.length === 0) {
     return (
       <div className="subhead-container">
+        <link rel="icon" type="image/svg+xml" href="orders-favicon.png" />
+
         <div className="Navigation-container">
           <div className="Icon">
             <NavLink to="/home">
