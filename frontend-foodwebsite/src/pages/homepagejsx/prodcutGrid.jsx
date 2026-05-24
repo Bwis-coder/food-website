@@ -29,7 +29,7 @@ const ProductGrid = ({ foodItem }) => {
     } finally {
       setTimeout(() => {
         setAdded(false);
-      }, 2000);
+      }, 1000);
     }
   };
   return (

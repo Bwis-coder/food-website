@@ -91,9 +91,10 @@ const getOrderItem = async (req, res) => {
 };
 
 const deleteItems = async (req, res) => {
+  const { id } = req.params;
+
   try {
     console.log("DELETE ROUTE HIT");
-    const { id } = req.params;
 
     const orderItem = await prisma.orderItem.findUnique({
       where: { id },
@@ -118,18 +119,13 @@ const deleteItems = async (req, res) => {
       where: { id },
     });
 
-    const items = await prisma.orderItem.findMany({
-      where: { orderId: orderItem.orderId },
-    });
-
-    let totalPrice = 0;
-    items.forEach((item) => {
-      totalPrice += item.price * item.quantity;
-    });
-
     await prisma.order.update({
       where: { id: orderItem.orderId },
-      data: { totalPrice },
+      data: {
+        totalPrice: {
+          decrement: orderItem.price * orderItem.quantity,
+        },
+      },
     });
 
     return res.status(200).json({
@@ -200,19 +196,13 @@ const addFoodQuantity = async (req, res) => {
         });
       }
 
-      const items = await tx.orderItem.findMany({
-        where: { orderId: order.id },
-        include: { food: true },
-      });
-
-      let totalPrice = 0;
-      items.forEach((item) => {
-        totalPrice += item.price * item.quantity;
-      });
-
       await tx.order.update({
         where: { id: order.id },
-        data: { totalPrice },
+        data: {
+          totalPrice: {
+            increment: food.price * quantity,
+          },
+        },
       });
 
       return updateItem;
@@ -260,18 +250,13 @@ const updateOrderItem = async (req, res) => {
       },
     });
 
-    const items = await prisma.orderItem.findMany({
-      where: { orderId: updateOrderItem.orderId },
-    });
-
-    let totalPrice = 0;
-    items.forEach((item) => {
-      totalPrice += item.price * item.quantity;
-    });
-
     await prisma.order.update({
       where: { id: updateOrderItem.orderId },
-      data: { totalPrice },
+      data: {
+        totalPrice: {
+          increment: orderItem.price,
+        },
+      },
     });
 
     return res.status(200).json({
