@@ -26,9 +26,13 @@ const OrderMainPage = () => {
     refetchOnReconnect: true,
   });
 
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  }
+if (isLoading) {
+  return (
+    <div className="loading-container">
+      <h2>Loading order...</h2>
+    </div>
+  );
+}
 
   if (isError) {
     return <h1>Failed to load orders</h1>;

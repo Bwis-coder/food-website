@@ -31,11 +31,14 @@ const Orders = () => {
       queryClient.invalidateQueries({ queryKey: ["admin"] });
     }
   }, [order, queryClient]);
-
+  
   if (isLoading) {
-    return <h2>Loading order...</h2>;
+    return (
+      <div className="loading-container">
+        <h2>Loading order...</h2>
+      </div>
+    );
   }
-
   if (isError || !order) {
     return (
       <div className="subhead-container">
