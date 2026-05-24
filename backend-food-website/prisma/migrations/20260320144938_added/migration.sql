@@ -1,4 +1,0 @@
--- AlterTable
-ALTER TABLE `user` ADD COLUMN `resTokenExpiry` DATETIME(3) NULL,
-    ADD COLUMN `resetToken` VARCHAR(191) NULL,
-    MODIFY `role` ENUM('USER', 'ADMIN') NULL DEFAULT 'USER';
