@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import bwisLogo from "../../assets/bwislogo.PNG";
+import bwisLogo from "/bwislogo.PNG";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
