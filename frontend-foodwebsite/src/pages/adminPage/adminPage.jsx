@@ -41,7 +41,7 @@ const AdminPage = () => {
       await axios.put(
         `${weburl}/admin/updateStatus/${id}`,
         {},
-        { withCredentials: true }
+        { withCredentials: true },
       );
 
       setShowDetails(null);
@@ -53,11 +53,7 @@ const AdminPage = () => {
 
   const logOutFn = async () => {
     try {
-      await axios.post(
-        `${weburl}/auth/logout`,
-        {},
-        { withCredentials: true }
-      );
+      await axios.post(`${weburl}/auth/logout`, {}, { withCredentials: true });
       queryClient.clear();
       navigate("/login");
     } catch (error) {
@@ -66,7 +62,17 @@ const AdminPage = () => {
   };
 
   if (isLoading) return <h1 className="pageStatus">loading data....</h1>;
-  if (error) return <h1 className="pageStatus">something went wrong</h1>;
+  if (error)
+    return (
+      <div className="admin-header">
+        <NavLink to="/home" className="admin-home-link">
+          <FontAwesomeIcon icon={faHouse} />
+          <span>Home</span>
+        </NavLink>
+        <h1 className="pageStatus">something went wrong</h1>;
+      </div>
+    );
+
   if (!getAdminOrder || getAdminOrder.length === 0)
     return <h1 className="pageStatus">No order yet from the customers</h1>;
 
