@@ -19,7 +19,7 @@ const getConfirmedOrder = async (req, res) => {
     const order = await prisma.order.findMany({
       where: {
         status: {
-          OR: ["CONFIRMED", "SUCCESSFUL"],
+          in: ["CONFIRMED", "SUCCESSFUL"],
         },
       },
       orderBy: {
