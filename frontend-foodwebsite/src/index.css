@@ -20,4 +20,6 @@ button:hover {
   transform: scale(1.05);
 }
 
-
+input {
+  font-size: 1.6rem; /* must be at least 16px to prevent zoom on mobile */
+}
