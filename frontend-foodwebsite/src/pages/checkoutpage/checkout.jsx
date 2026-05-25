@@ -22,18 +22,12 @@ const Checkout = ({ getOrderItems }) => {
       await axios.put(
         `${weburl}/orders/update/${id}`,
         {},
-        {
-          withCredentials: true,
-        },
+        { withCredentials: true },
       );
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({
-        queryKey: ["getOrderItems"],
-      });
-      queryClient.invalidateQueries({
-        queryKey: ["foodItems"],
-      });
+      queryClient.invalidateQueries({ queryKey: ["getOrderItems"] });
+      queryClient.invalidateQueries({ queryKey: ["foodItems"] });
     },
   });
 
@@ -44,40 +38,35 @@ const Checkout = ({ getOrderItems }) => {
       });
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({
-        queryKey: ["getOrderItems"],
-      });
-      queryClient.invalidateQueries({
-        queryKey: ["foodItems"],
-      });
+      queryClient.invalidateQueries({ queryKey: ["getOrderItems"] });
+      queryClient.invalidateQueries({ queryKey: ["foodItems"] });
     },
   });
 
   const placeOrder = async () => {
     if (order) {
       setStatus(true);
-
       setTimeout(() => {
         navigate(`/orders/${order.id}`);
       }, 4000);
     }
   };
+
   if (status) {
     return (
       <div className="statusLoading">
-        <h1>Placing order...y</h1>
+        <h1>Placing order...</h1>
         <img src="/bean-eater.svg" alt="loading" />
       </div>
     );
   }
+
   if (!order) {
     return (
       <>
-        <link rel="icon" type="image/svg+xml" href="/cart-favicon.png" />
         <NavLink className="review-icon" to="/home">
           <FontAwesomeIcon icon={faHouse} />
         </NavLink>
-
         <div className="orderReview">
           <h1>No pending order to review</h1>
         </div>
@@ -87,7 +76,6 @@ const Checkout = ({ getOrderItems }) => {
 
   return (
     <div className="checkoutMain-container">
-      <link rel="icon" type="image/svg+xml" href="/cart-favicon.png" />
       <div className="nav-container">
         <NavLink className="nav-icon" to="/home">
           <FontAwesomeIcon icon={faHouse} />
@@ -98,17 +86,14 @@ const Checkout = ({ getOrderItems }) => {
 
       <div className="payment-container">
         <h1>Payment Record</h1>
-
         <div>
           <p>Order total:</p>
           <h4>${order.totalPrice}</h4>
         </div>
-
         <div>
           <p>Status:</p>
           <h4>{order.status}</h4>
         </div>
-
         <button onClick={placeOrder}>Place your order</button>
       </div>
 
@@ -119,24 +104,19 @@ const Checkout = ({ getOrderItems }) => {
               <div>
                 <img
                   className="productImage"
-                  src={`${weburl}/${item.food.image}`}
+                  src={item.food.image}
                   alt={item.food.name}
                 />
               </div>
-
               <div className="quantity-container">
                 <p>{item.food.name}</p>
-
                 <p>Price: ${item.price}</p>
-
                 <div className="quantity-section">
                   <h3>Quantity: {item.quantity}</h3>
-
                   <div className="update-delete">
                     <span onClick={() => updateOrder.mutate(item.id)}>
                       Update
                     </span>
-
                     <span onClick={() => deleteOrder.mutate(item.id)}>
                       Delete
                     </span>

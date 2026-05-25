@@ -106,7 +106,7 @@ const OrderMainPage = () => {
 
               return (
                 <div className="foodItems" key={item.id}>
-                  <img src={`${weburl}/${item.food.image}`} />
+                  <img src={item.food.image} alt={item.food.name} />
                   <span>{item.food.name}</span>
                   <span>x{item.quantity}</span>
                   <span>${item.price} each</span>
