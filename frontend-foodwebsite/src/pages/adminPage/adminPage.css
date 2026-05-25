@@ -217,12 +217,12 @@
 
 @media (max-width: 37rem) {
   html {
-    font-size: 57%;
+    font-size: 55%;
   }
 }
 
 @media (max-width: 27rem) {
   html {
-    font-size: 53%;
+    font-size: 45%;
   }
 }
