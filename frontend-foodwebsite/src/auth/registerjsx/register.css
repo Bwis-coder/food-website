@@ -63,11 +63,6 @@
   font-weight: 500;
 }
 
-.register-container input:focus {
-  outline: none;
-  border: 1px solid orange;
-}
-
 .register-container input::placeholder {
   font-family: "Courier New", Courier, monospace;
   font-weight: 800;
