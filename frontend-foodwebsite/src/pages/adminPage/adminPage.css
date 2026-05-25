@@ -216,8 +216,70 @@
 }
 
 
-@media (max-width: 46.31rem) {
-  html {
-    font-size: 55%
+@media (max-width: 768px) {
+  .admin-main-container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .admin {
+    font-size: 1.6rem;
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+
+  .middle-section-header {
+    overflow-x: auto;
+  }
+
+  .admin-user-info {
+    min-width: 700px;
+  }
+
+  .admin-user-info th,
+  .userDetails td {
+    padding: 0.7rem;
+    font-size: 0.85rem;
+  }
+
+  .cutomers-details {
+    padding: 1rem;
+  }
+
+  .cutomers-details h1 {
+    font-size: 1.1rem;
+  }
+
+  .cutomers-details h4,
+  .cutomers-details span {
+    font-size: 0.9rem;
+  }
+
+  .logout-button {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .pageStatus {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
+
+  .admin-header {
+    justify-content: center;
+  }
+
+  .admin-home-link {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.9rem;
   }
 }
