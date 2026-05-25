@@ -36,7 +36,7 @@ const ProductGrid = ({ foodItem }) => {
     <>
       <div className="homepage-container">
         <div className="image-container">
-          <img src={`${weburl}/${foodItem.image}`} />
+          <img src={foodItem.image} />
         </div>
         <div>
           <h2> name: {foodItem.name}</h2>
@@ -61,7 +61,7 @@ const ProductGrid = ({ foodItem }) => {
             </select>
           </div>
           <button onClick={addquantity}>Add to Cart</button>
-          {added && <h2 className='added-food'>{foodItem.name} added</h2>}
+          {added && <h2 className="added-food">{foodItem.name} added</h2>}
         </div>
       </div>
     </>
