@@ -18,7 +18,7 @@
 }
 
 .register-container form:hover {
-border:  1px solid transparent;
+  border: 1px solid transparent;
   box-shadow: 2px 2px 15px rgb(115, 115, 115);
 }
 
@@ -58,12 +58,10 @@ border:  1px solid transparent;
   padding: 4.8px;
   border-radius: 10px;
   width: 100%;
-}
-
-input:focus {
   outline: none;
   border: 1px solid orange;
 }
+
 .register-container input::placeholder {
   font-family: "Courier New", Courier, monospace;
   font-weight: 800;
@@ -78,7 +76,7 @@ input:focus {
   font-weight: 700;
   cursor: pointer;
   width: 100%;
-  color:white;
+  color: white;
   border: none;
 }
 
@@ -100,13 +98,7 @@ input:focus {
 
   overflow: hidden;
 
-  background: linear-gradient(
-    120deg,
-    #ff7a18,
-    #ff3d00,
-    #ff9a00,
-    #af002d
-  );
+  background: linear-gradient(120deg, #ff7a18, #ff3d00, #ff9a00, #af002d);
   background-size: 300% 300%;
   animation: bgMove 5s ease infinite;
 }
@@ -144,7 +136,7 @@ input:focus {
   z-index: 2;
 
   animation: pulse 1.3s ease-in-out infinite;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
 }
 
 .statusLoading p {
@@ -157,19 +149,44 @@ input:focus {
 }
 
 @keyframes bgMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes pulse {
-  0% { transform: scale(0.95); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(0.95); }
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.95);
+  }
 }
 
 @keyframes float {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(3rem, -3rem); }
-  100% { transform: translate(0, 0); }
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(3rem, -3rem);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .register-container form:hover {
+    border: none;
+    box-shadow: none;
+  }
 }
