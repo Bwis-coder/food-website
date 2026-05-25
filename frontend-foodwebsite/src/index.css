@@ -23,3 +23,9 @@ button:hover {
 input {
   font-size: 1.6rem; /* must be at least 16px to prevent zoom on mobile */
 }
+
+@media (max-width: 45.66rem) {
+  html {
+    font-size: 60%;
+  }
+}

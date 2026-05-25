@@ -92,6 +92,7 @@ const Register = () => {
           className="userPassword"
           placeholder="password"
           type="password"
+          autoComplete="current-password"
           onChange={(e) => {
             setPassword(e.target.value);
           }}

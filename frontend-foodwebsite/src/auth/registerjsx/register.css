@@ -188,3 +188,21 @@ input:focus {
     transform: translate(0, 0);
   }
 }
+
+@media (max-width: 45.63rem) {
+  html {
+    font-size: 58%;
+  }
+}
+
+@media (max-width: 36.13rem) {
+  html {
+    font-size: 53%;
+  }
+}
+
+@media (max-width: 28rem) {
+  html {
+    font-size: 45%;
+  }
+}
