@@ -87,12 +87,10 @@
 }
 
 .userDetails td {
-  border: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.7rem 0;
-  font-size: 0.9rem;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  font-size: 0.95rem;
 }
 
 .userDetails:hover {
@@ -300,13 +298,5 @@
   .admin-home-link {
     width: 100%;
     justify-content: center;
-  }
-}
-
-
-@media(max-width:768px){
-  .order-row{
-    flex-direction: column;
-    align-items: flex-start;
   }
 }

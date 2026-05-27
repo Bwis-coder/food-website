@@ -76,10 +76,14 @@ const AdminPage = () => {
   if (!getAdminOrder || getAdminOrder.length === 0)
     return <h1 className="pageStatus">No order yet from the customers</h1>;
 
-  const user = getAdminOrder[0].user;
+  const adminUser = getAdminOrder.find(
+    (order) => order.user.role === "ADMIN",
+  )?.user;
 
   const uniqueUsers = new Set(getAdminOrder.map((item) => item.user.id));
+
   const totalUser = uniqueUsers.size;
+  
   const totalOrder = getAdminOrder.length;
 
   let totalPrice = 0;
@@ -96,8 +100,8 @@ const AdminPage = () => {
         </NavLink>
       </div>
 
-      {user.role === "ADMIN" && (
-        <h1 className="admin">HELLO ADMIN {user.name.toUpperCase()}</h1>
+      {adminUser && (
+        <h1 className="admin">HELLO ADMIN {adminUser.name.toUpperCase()}</h1>
       )}
 
       <div className="header">
