@@ -179,7 +179,7 @@ const AdminPage = () => {
               <h4>Item Ordered</h4>
               <span>
                 {showDetails.orderItem
-                  .map((item) => item.food?.name)
+                  .map((item) => `${item.food?.name} x${item.quantity}`)
                   .join(", ")}
               </span>
             </div>
