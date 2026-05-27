@@ -77,13 +77,13 @@ const AdminPage = () => {
     return <h1 className="pageStatus">No order yet from the customers</h1>;
 
   const adminUser = getAdminOrder.find(
-    (order) => order.user.role === "ADMIN",
+    (order) => order.user?.role === "ADMIN",
   )?.user;
 
   const uniqueUsers = new Set(getAdminOrder.map((item) => item.user.id));
 
   const totalUser = uniqueUsers.size;
-  
+
   const totalOrder = getAdminOrder.length;
 
   let totalPrice = 0;
