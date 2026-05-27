@@ -96,7 +96,9 @@ const AdminPage = () => {
         </NavLink>
       </div>
 
-      <h1 className="admin">HELLO ADMIN {user.name.toUpperCase()}</h1>
+      {user.role === "ADMIN" && (
+        <h1 className="admin">HELLO ADMIN {user.name.toUpperCase()}</h1>
+      )}
 
       <div className="header">
         <h1>
