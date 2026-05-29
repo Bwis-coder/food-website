@@ -9,6 +9,8 @@
   gap: 1.6rem;
   padding-top: 18rem;
   padding-bottom: 10rem;
+  align-content: stretch;
+  justify-items: center;
 }
 
 .homepage-container {
@@ -74,13 +76,12 @@ select {
   max-width: 100%;
 }
 
-
 .svg-image {
   width: 6rem;
   height: 6rem;
   object-fit: contain;
   display: block;
-  margin: 10rem auto ;
+  margin: 10rem auto;
   animation: spinFade 1.2s linear infinite;
 }
 
