@@ -15,8 +15,7 @@
   margin: 0;
   padding: 1rem;
   max-width: 40rem;
-  display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
 }
 
@@ -55,6 +54,8 @@
   margin: 0;
   font-style: oblique;
   font-weight: 700;
+  text-align:left;
+  margin-bottom: -1rem;
 }
 
 .register-container input {
