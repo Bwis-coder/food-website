@@ -32,7 +32,7 @@ app.use(cookieParser());
 
 app.use("/foodImages", express.static("foodImages"));
 
-// Routes
+// Routesrk
 app.use("/foodItems", foodItemsRoutes);
 app.use("/auth", authRoutes);
 app.use("/orders", orderRoutes);

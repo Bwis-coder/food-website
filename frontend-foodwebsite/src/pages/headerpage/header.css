@@ -167,3 +167,9 @@
     font-size: 30%;
   }
 }
+
+@media (max-width: 48rem) {
+  .homeWriteUp {
+    display: none;
+  }
+}

@@ -3,6 +3,8 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./register.css";
 import weburl from "../../config/weblink";
+import profile from "/profile.svg";
+import lock from "/lock.svg";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -31,6 +33,7 @@ const Register = () => {
         email: email,
         password: password,
       });
+
       setName("");
       setPassword("");
       setEmail("");
@@ -55,53 +58,73 @@ const Register = () => {
       </div>
     );
   }
+
   return (
     <div className="register-container">
       <form onSubmit={signUp} className="my-form">
         <div className="hero-section">
-          <h1 className="greeting-message">
-            “Create Your Account”
+          <div className="greeting-message">
+            <h1>“Create Your Account”</h1>
             <span>Start ordering delicious meals today</span>
-          </h1>
-          <p>please enter your details</p>
+          </div>
+
+          <span>please enter your details</span>
         </div>
 
-        <h5>Name</h5>
-        <input
-          className="userName"
-          placeholder="Name"
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-          value={name}
-        />
+        <div className="form-container">
+          <div>
+            <label htmlFor="name">
+              <img src={profile} alt="profile" />
+            </label>
 
-        <h5>Email</h5>
-        <input
-          className="userEmail"
-          placeholder="Enter your email"
-          type="email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          value={email}
-        />
+            <input
+              id="name"
+              className="userName"
+              placeholder="Name"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+              value={name}
+            />
+          </div>
 
-        <h5>Password</h5>
-        <input
-          className="userPassword"
-          placeholder="password"
-          type="password"
-          autoComplete="current-password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          value={password}
-        />
+          <div>
+            <label htmlFor="email">@</label>
 
-        <button className="register-button" disabled={loading} type="submit">
-          {loading ? "Creating account..." : "Register"}
-        </button>
+            <input
+              id="email"
+              className="userEmail"
+              placeholder="email"
+              type="email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+              value={email}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="password">
+              <img src={lock} alt="lock" />
+            </label>
+
+            <input
+              id="password"
+              className="userPassword"
+              placeholder="password"
+              type="password"
+              autoComplete="current-password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              value={password}
+            />
+          </div>
+
+          <button className="register-button" disabled={loading} type="submit">
+            {loading ? "Creating account..." : "Register"}
+          </button>
+        </div>
 
         <div className="notice" style={{ color: "red" }}>
           {notice}

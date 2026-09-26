@@ -4,6 +4,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import weburl from "../../config/weblink.js";
 import "./login.css";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import profile from "/profile.svg";
+import lock from "/lock.svg";
 
 const signUp = async (post) => {
   const res = await axios.post(
@@ -12,8 +14,9 @@ const signUp = async (post) => {
       email: post.email,
       password: post.password,
     },
-    { withCredentials: true }
+    { withCredentials: true },
   );
+
   return res.data;
 };
 
@@ -75,36 +78,54 @@ const Login = () => {
         }}
       >
         <div className="hero-section">
-          <h1 className="greeting-message">
-            Welcome back to Bwis Restaurant
-          </h1>
-          <p>please enter your details</p>
+          <div className="greeting-message">
+            <h1>Welcome Back</h1>
+            <span>Welcome back to Bwis Restaurant</span>
+          </div>
+
+          <span>please enter your details</span>
         </div>
 
-        <h5>Email</h5>
-        <input
-          className="userEmail"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <div className="form-container">
+          <div>
+            <label htmlFor="email">
+              <img src={profile} alt="email" />
+            </label>
 
-        <h5>Password</h5>
-        <input
-          className="userPassword"
-          type="password"
-          autoComplete="current-password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+            <input
+              id="email"
+              className="userEmail"
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-        <NavLink to="/findMail">
-          <h3>Forgot password?</h3>
-        </NavLink>
+          <div>
+            <label htmlFor="password">
+              <img src={lock} alt="password" />
+            </label>
 
-        <button className="register-button" type="submit">
-          Login
-        </button>
+            <input
+              id="password"
+              className="userPassword"
+              type="password"
+              placeholder="Password"
+              autoComplete="current-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <NavLink to="/findMail">
+            <h3>Forgot password?</h3>
+          </NavLink>
+
+          <button className="register-button" type="submit">
+            Login
+          </button>
+        </div>
 
         <div className="notice" style={{ color: "red" }}>
           {notice}
