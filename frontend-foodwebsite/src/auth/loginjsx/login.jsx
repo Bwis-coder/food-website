@@ -65,15 +65,6 @@ const Login = () => {
 
   return (
     <div className="register-container">
-      <div className="hero-section">
-        <div className="greeting-message">
-          <h1>Welcome Back</h1>
-          <span>Welcome back to Bwis Restaurant</span>
-        </div>
-
-        <span>please enter your details</span>
-      </div>
-
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -86,6 +77,15 @@ const Login = () => {
           mutate({ email, password });
         }}
       >
+        <div className="hero-section">
+          <div className="greeting-message">
+            <h1>Welcome Back</h1>
+            <span>Welcome back to Bwis Restaurant</span>
+          </div>
+
+          <span>please enter your details</span>
+        </div>
+
         <div className="form-container">
           <div>
             <label htmlFor="email">
@@ -117,29 +117,28 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div>
-            <button className="register-button" type="submit">
-              Login
-            </button>
-          </div>
-        </div>
-      </form>
 
-      <div className="login-options">
-        <NavLink to="/findMail">
-          <h3>Forgot password?</h3>
-        </NavLink>
+          <NavLink to="/findMail">
+            <h3>Forgot password?</h3>
+          </NavLink>
+
+          <button className="register-button" type="submit">
+            Login
+          </button>
+        </div>
 
         <div className="notice" style={{ color: "red" }}>
           {notice}
-        </div>
 
-        <NavLink to="/">
-          <p className="sign-up">
-            Don't have an account? <span>Sign up</span>
-          </p>
-        </NavLink>
-      </div>
+          <div>
+            <NavLink to="/">
+              <p className="sign-up">
+                Don't have an account? <span>Sign up</span>
+              </p>
+            </NavLink>
+          </div>
+        </div>
+      </form>
     </div>
   );
 };
