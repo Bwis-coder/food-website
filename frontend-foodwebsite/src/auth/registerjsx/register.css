@@ -1,287 +1,219 @@
 .register-container {
+  width: 90%;
+  max-width: 50rem;
   min-height: 100dvh;
-  width: 100%;
-  max-width: 120rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0 auto;
-  background-color: #ffffff;
-  border-radius: 2rem;
-}
+  padding: 5rem 2rem;
+  box-sizing: border-box;
 
-.register-container form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 3rem;
-  align-items: center;
   justify-content: center;
-  border: 0.1rem solid #eeeeee;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  box-shadow: 0 0.8rem 2.5rem rgba(0, 0, 0, 0.08);
-  background-color: #ffffff;
-}
+  align-items: center;
 
-.register-container form:hover {
-  border-color: #dddddd;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.12);
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .hero-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
 
 .greeting-message {
-  color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  gap: 0.8rem;
 }
 
 .greeting-message h1 {
-  font-size: clamp(2rem, 2.5vw, 3rem);
+  margin: 0;
+  font-size: 3rem;
+  color: rgb(255, 106, 7);
   font-weight: 700;
 }
 
 .greeting-message span {
-  font-size: clamp(1.5rem, 1.7vw, 2rem);
-  font-weight: 400;
-  color: #555555;
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.hero-section>span {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+  color: #777;
+}
+
+.my-form {
+  width: 100%;
 }
 
 .form-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  width: 100%;
+  gap: 1.5rem;
 }
 
 .form-container>div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.8rem;
   width: 100%;
-}
-
-.form-container>div label {
-  background-color: rgb(158, 67, 7);
-  height: 2.8rem;
-  width: 2.8rem;
-  min-width: 2.8rem;
-  border-radius: 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  transition: 0.3s ease;
+  box-sizing: border-box;
 }
 
-.form-container>div label img {
-  width: 1.5rem;
-  height: 1.5rem;
+.form-container label {
+  width: 4.5rem;
+  height: 4.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgb(255, 106, 7);
+  color: white;
+
+  border-radius: 0.6rem 0 0 0.6rem;
+  flex-shrink: 0;
 }
 
-.form-container>div:has(input:focus) label {
-  background-color: orange;
-  transform: scale(1.05);
+.form-container label img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
 }
 
 .form-container input {
-  padding: 1rem 1.2rem;
-  border-radius: 0.8rem;
-  width: 25rem;
-  max-width: 100%;
+  flex: 1;
+  min-width: 0;
+  height: 4.8rem;
+  padding: 0 1.2rem;
+
+  border: 0.1rem solid #ddd;
+  border-left: none;
+  border-radius: 0 0.6rem 0.6rem 0;
+
+  font-size: 1.5rem;
   outline: none;
-  border: 0.1rem solid #dddddd;
-  font-size: 1.6rem;
-  transition: 0.3s ease;
+  box-sizing: border-box;
 }
 
 .form-container input:focus {
-  border-color: orange;
-  box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.12);
+  border-color: rgb(255, 106, 7);
 }
 
-.form-container input::placeholder {
-  text-transform: capitalize;
-  font-weight: 400;
-  color: #999999;
+.form-container>div:last-child {
+  display: block;
 }
 
-.register-container button {
-  background-color: orange;
-  padding: 1rem;
-  border-radius: 0.8rem;
-  font-family: Arial, sans-serif;
-  font-weight: 700;
-  cursor: pointer;
-  width: 30.1rem;
-  max-width: 100%;
-  color: white;
+.register-button {
+  width: 100%;
+  height: 4.8rem;
+
   border: none;
+  border-radius: 0.6rem;
+
+  background-color: rgb(255, 106, 7);
+  color: white;
+
   font-size: 1.6rem;
-  transition: 0.3s ease;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.register-container button:hover {
-  background-color: #e69500;
+.register-button:hover {
+  background-color: rgb(220, 88, 0);
   transform: translateY(-0.1rem);
 }
 
-.register-container button:disabled {
-  opacity: 0.7;
+.register-button:active {
+  transform: translateY(0);
+}
+
+.register-button:disabled {
+  background-color: #aaa;
   cursor: not-allowed;
   transform: none;
 }
 
-.sign-up {
-  color: #555555;
+.notice {
+  width: 100%;
+  min-height: 2rem;
+  margin-top: 1.5rem;
   text-align: center;
+  font-size: 1.4rem;
+}
+
+.notice>div {
+  margin-top: 1.5rem;
+}
+
+.sign-up {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #555;
 }
 
 .sign-up span {
-  color: orange;
-  font-weight: 500;
+  color: rgb(255, 106, 7);
+  font-weight: 700;
 }
 
-.sign-up span:hover {
-  color: #cc8400;
-}
-
-.notice {
-  font-size: 1.4rem;
-  text-align: center;
+.notice a {
+  text-decoration: none;
 }
 
 .statusLoading {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  background: linear-gradient(120deg,
-      #ff7a18,
-      #ff3d00,
-      #ff9a00,
-      #af002d);
-  background-size: 300% 300%;
-  animation: bgMove 5s ease infinite;
-}
-
-.statusLoading::before,
-.statusLoading::after {
-  content: "";
-  position: absolute;
-  width: 30rem;
-  height: 30rem;
-  border-radius: 50%;
-  filter: blur(8rem);
-  opacity: 0.4;
-  animation: float 6s ease-in-out infinite;
-}
-
-.statusLoading::before {
-  background: #ffffff;
-  top: -10rem;
-  left: -10rem;
-}
-
-.statusLoading::after {
-  background: #000000;
-  bottom: -10rem;
-  right: -10rem;
-  animation-delay: 2s;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .statusLoading img {
-  width: 7rem;
-  height: 7rem;
-  object-fit: contain;
-  z-index: 2;
-  animation: pulse 1.3s ease-in-out infinite;
-  filter: drop-shadow(0 1rem 2rem rgba(0, 0, 0, 0.3));
+  width: 6rem;
+  height: 6rem;
 }
 
 .statusLoading p {
   margin-top: 1.5rem;
-  font-size: 1.6rem;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-weight: 600;
-  color: #ffffff;
-  z-index: 2;
+  font-size: 1.5rem;
 }
 
-@keyframes bgMove {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.95);
-  }
-
-  50% {
-    transform: scale(1.1);
-  }
-
-  100% {
-    transform: scale(0.95);
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  50% {
-    transform: translate(3rem, -3rem);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 30rem) {
   .register-container {
-    padding: 2rem;
+    width: 95%;
+    padding: 3rem 1rem;
   }
 
-  .register-container form {
-    width: 100%;
-    max-width: 40rem;
-    padding: 2.5rem 2rem;
+  .greeting-message h1 {
+    font-size: 2.5rem;
   }
 
-  .register-container form:hover {
-    border-color: #eeeeee;
-    box-shadow: 0 0.8rem 2.5rem rgba(0, 0, 0, 0.08);
+  .greeting-message span {
+    font-size: 1.4rem;
   }
 
-  .form-container input,
-  .register-container button {
-    width: 100%;
+  .hero-section>span {
+    font-size: 1.3rem;
+  }
+
+  .form-container {
+    gap: 1.2rem;
+  }
+
+  .form-container label {
+    width: 4rem;
+  }
+
+  .form-container input {
+    font-size: 1.4rem;
   }
 }

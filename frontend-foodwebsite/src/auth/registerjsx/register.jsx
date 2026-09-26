@@ -19,7 +19,7 @@ const Register = () => {
   const signUp = async (e) => {
     e.preventDefault();
 
-    if (name === "" || email === "" || password === "") {
+    if (!name || !email || !password) {
       setnotice("please complete all the fields");
       return;
     }
@@ -29,14 +29,14 @@ const Register = () => {
 
     try {
       await axios.post(`${weburl}/auth/register`, {
-        name: name,
-        email: email,
-        password: password,
+        name,
+        email,
+        password,
       });
 
       setName("");
-      setPassword("");
       setEmail("");
+      setPassword("");
 
       navigate("/login");
     } catch (error) {
@@ -61,16 +61,16 @@ const Register = () => {
 
   return (
     <div className="register-container">
-      <form onSubmit={signUp} className="my-form">
-        <div className="hero-section">
-          <div className="greeting-message">
-            <h1>“Create Your Account”</h1>
-            <span>Start ordering delicious meals today</span>
-          </div>
-
-          <span>please enter your details</span>
+      <div className="hero-section">
+        <div className="greeting-message">
+          <h1>Create Your Account</h1>
+          <span>Start ordering delicious meals today</span>
         </div>
 
+        <span>please enter your details</span>
+      </div>
+
+      <form onSubmit={signUp} className="my-form">
         <div className="form-container">
           <div>
             <label htmlFor="name">
@@ -80,11 +80,10 @@ const Register = () => {
             <input
               id="name"
               className="userName"
+              type="text"
               placeholder="Name"
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
               value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
 
@@ -94,12 +93,10 @@ const Register = () => {
             <input
               id="email"
               className="userEmail"
-              placeholder="email"
               type="email"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
+              placeholder="Email"
               value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
@@ -111,33 +108,37 @@ const Register = () => {
             <input
               id="password"
               className="userPassword"
-              placeholder="password"
               type="password"
-              autoComplete="current-password"
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
+              placeholder="Password"
+              autoComplete="new-password"
               value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
-          <button className="register-button" disabled={loading} type="submit">
-            {loading ? "Creating account..." : "Register"}
-          </button>
-        </div>
-
-        <div className="notice" style={{ color: "red" }}>
-          {notice}
-
           <div>
-            <NavLink to="/login">
-              <p className="sign-up">
-                Already have an account? <span>Sign in</span>
-              </p>
-            </NavLink>
+            <button
+              className="register-button"
+              disabled={loading}
+              type="submit"
+            >
+              {loading ? "Creating account..." : "Register"}
+            </button>
           </div>
         </div>
       </form>
+
+      <div className="notice" style={{ color: "red" }}>
+        {notice}
+
+        <div>
+          <NavLink to="/login">
+            <p className="sign-up">
+              Already have an account? <span>Sign in</span>
+            </p>
+          </NavLink>
+        </div>
+      </div>
     </div>
   );
 };
